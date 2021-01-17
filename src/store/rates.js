@@ -56,3 +56,10 @@ export function changeCurrencyCode(currencyCode) {
         })
     }
 }
+
+// thunk
+export function getInitialRates(dispatch, getState) {
+    const state = getState();
+    const currencyCode = getCurrencyCode( state );
+    dispatch(changeCurrencyCode(currencyCode));
+}
